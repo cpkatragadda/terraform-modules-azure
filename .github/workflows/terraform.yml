@@ -21,10 +21,10 @@ jobs:
       with:
         terraform_version: ${{ env.TERRAFORM_VERSION }}
     
-    - name: Terraform Format
-      id: fmt
-      run: terraform fmt -check
-      working-directory: ./examples/storage-account
+    # - name: Terraform Format
+    #   id: fmt
+    #   run: terraform fmt
+    #   working-directory: ./examples/storage-account
 
     - name: Terraform Init
       id: init
