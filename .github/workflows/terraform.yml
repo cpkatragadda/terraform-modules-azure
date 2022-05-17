@@ -12,7 +12,7 @@ jobs:
   TerraformRun:
     runs-on: ubuntu-latest
     env:
-      ARM_CLIENT_ID: "1674ebf3-4df5-471c-85cc-8ba917453e0e"
+      ARM_CLIENT_ID: ${{secrets.TF_ARM_CLIENT_ID}}
       ARM_CLIENT_SECRET: ${{secrets.TF_ARM_CLIENT_SECRET}}
       ARM_SUBSCRIPTION_ID: ${{secrets.TF_ARM_SUBSCRIPTION_ID}}
       ARM_TENANT_ID: ${{secrets.TF_ARM_TENANT_ID}}
@@ -57,7 +57,7 @@ jobs:
       run: exit 1
       working-directory: ./examples/storage-account
 
-    - name: Terraform Apply
+    #- name: Terraform Apply
       #if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-      run: terraform apply -auto-approve -input=false
-      working-directory: ./examples/storage-account
+    #  run: terraform apply -auto-approve -input=false
+    #  working-directory: ./examples/storage-account
