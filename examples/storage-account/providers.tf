@@ -2,6 +2,6 @@
 provider "azurerm" {
   features {}
   skip_provider_registration = true
-  subscription_id = ""
-  tenant_id       = ""
+  #subscription_id = ""
+  #tenant_id       = ""
 }
