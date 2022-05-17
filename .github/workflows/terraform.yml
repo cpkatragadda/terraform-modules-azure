@@ -12,7 +12,7 @@ jobs:
   TerraformRun:
     runs-on: ubuntu-latest
     env:
-      ARM_CLIENT_ID: ${{secrets.TF_ARM_CLIENT_ID}}
+      ARM_CLIENT_ID: "1674ebf3-4df5-471c-85cc-8ba917453e0e"
       ARM_CLIENT_SECRET: ${{secrets.TF_ARM_CLIENT_SECRET}}
       ARM_SUBSCRIPTION_ID: ${{secrets.TF_ARM_SUBSCRIPTION_ID}}
       ARM_TENANT_ID: ${{secrets.TF_ARM_TENANT_ID}}
@@ -34,7 +34,9 @@ jobs:
 
     - name: Terraform Init
       id: init
-      run: terraform init
+      run: |
+        echo $ARM_CLIENT_ID
+        terraform init
       working-directory: ./examples/storage-account
 
     - name: Terraform Validate
