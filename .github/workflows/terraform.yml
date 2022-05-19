@@ -15,7 +15,7 @@ jobs:
       ARM_CLIENT_ID: ${{secrets.TF_ARM_CLIENT_ID}}
       ARM_CLIENT_SECRET: ${{secrets.TF_ARM_CLIENT_SECRET}}
       ARM_SUBSCRIPTION_ID: ${{secrets.TF_ARM_SUBSCRIPTION_ID}}
-      ARM_TENANT_ID: ${{secrets.TF_ARM_TENANT_ID}}
+      ARM_TENANT_ID: ${{secrets.TF_ARM_TENANT_IDss}}
 
     steps:
 
@@ -37,7 +37,8 @@ jobs:
       run: |
         echo $ARM_CLIENT_ID
         echo $ARM_SUBSCRIPTION_ID
-        az account list --all
+        az account show
+        #az account list --all
         terraform init
       working-directory: ./examples/storage-account
 
